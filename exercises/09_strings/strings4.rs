@@ -13,11 +13,11 @@ fn string(arg: String) {
 // Your task is to replace `placeholder(…)` with either `string_slice(…)`
 // or `string(…)` depending on what you think each value is.
 fn main() {
-    placeholder("blue");
+    string_slice("blue");
 
-    placeholder("red".to_string());
+    string_slice("red".to_string());
 
-    placeholder(String::from("hi"));
+    string(String::from("hi"));
 
     placeholder("rust is fun!".to_owned());
 
