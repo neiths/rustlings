@@ -1,6 +1,4 @@
 // Calls of this function should be replaced with calls of `string_slice` or `string`.
-fn placeholder() {}
-
 fn string_slice(arg: &str) {
     println!("{arg}");
 }
@@ -15,23 +13,23 @@ fn string(arg: String) {
 fn main() {
     string_slice("blue");
 
-    string_slice("red".to_string());
+    string("red".to_string());
 
     string(String::from("hi"));
 
-    placeholder("rust is fun!".to_owned());
+    string("rust is fun!".to_owned());
 
-    placeholder("nice weather".into());
+    string("nice weather".into());
 
-    placeholder(format!("Interpolation {}", "Station"));
+    string(format!("Interpolation {}", "Station"));
 
     // WARNING: This is byte indexing, not character indexing.
     // Character indexing can be done using `s.chars().nth(INDEX)`.
-    placeholder(&String::from("abc")[0..1]);
+    string_slice(&String::from("abc")[0..1]);
 
-    placeholder("  hello there ".trim());
+    string_slice("  hello there ".trim());
 
-    placeholder("Happy Monday!".replace("Mon", "Tues"));
+    string("Happy Monday!".replace("Mon", "Tues"));
 
-    placeholder("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }
